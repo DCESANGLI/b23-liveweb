@@ -1,85 +1,53 @@
 <html>
 
 <head>
-    <title>JavaScript Ex3</title>
+    <title>JavaScript Ex4</title>
     <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 
 <body>
-    <h1>JavaScript Radio Button event handling</h1>
+    <h1>JavaScript to check nested if condition</h1>
     <hr>
 
     <div class="section">
-        <div class="item">
-            <input type="radio" name="menu" id="m1" value="Pizza" onchange="selectMenu(this)" />
-            <label for="m1">Pizza</label>
+        <div class="part-1">
+            <img src="./images/sample-image.jpg" />
+        </div>
+        <div class="part-2">
+            <h3 class="question-title">
+                <i class="fa-solid fa-clipboard-question"></i>
+                Check condition and print whether employee is eligible for insurance or not
+            </h3>
+
+            <div class="que-description">
+                <ol>
+                    <li>employee is male and age is between 25 to 65</li>
+                    <li>employee is female and age is between 21 to 61</li>
+                </ol>
+            </div>
+
+            <div class="question-body">
+                <input type="radio" name="gender" id="r1" value="male" onchange="selectGender(this)" />
+                <label for="r1">Male</label>
+
+                <input type="radio" name="gender" id="r2" value="female" onchange="selectGender(this)" />
+                <label for="r2">Female</label>
+
+                <br /><br />
+                <input type="text" placeholder="age" id="txt-age" />
+            </div>
+
+            <br /><br />
+            <button onclick="check()">Check</button>
+            <h3 id="output">null</h3>
         </div>
 
-        <div class="item">
-            <input type="radio" name="menu" id="m2" value="Burger" onchange="selectMenu(this)" />
-            <label for="m2">Burger</label>
-        </div>
 
-        <div class="item">
-            <input type="radio" name="menu" id="m3" value="Cold Drink" onchange="selectMenu(this)" />
-            <label for="m3">Cold Drink</label>
-        </div>
-
-        <div class="item">
-            <input type="radio" name="menu" id="m4" value="Coffee" onchange="selectMenu(this)" />
-            <label for="m4">Coffee</label>
-        </div>
-
-        <h3 id="h3-ans">null</h3>
     </div>
 
-    <div class="section">
-        <div class="item">
-            <input type="checkbox" id="c1" value="Python Programming" onchange="selectOption(this)"/>
-            <label for="c1">Python Programming</label>
-        </div>
 
-        <div class="item">
-            <input type="checkbox" id="c2" value="Java Programming" onchange="selectOption(this)"/>
-            <label for="c2">Java Programming</label>
-        </div>
-
-        <div class="item">
-            <input type="checkbox" id="c3" value="Swift Programming" onchange="selectOption(this)"/>
-            <label for="c3">Swift Programming</label>
-        </div>
-
-        <div class="item">
-            <input type="checkbox" id="c4" value="Javascript Programming" onchange="selectOption(this)"/>
-            <label for="c4">Javascript Programming</label>
-        </div>
-
-        <h3 id="ch-ans">null</h3>
-    </div>
-
-    <script>
-        //"target" is function argument, "this" is function parameter
-        function selectMenu(target) {
-            //console.log(target.value);
-            document.getElementById("h3-ans").innerHTML = "You selected " + target.value;
-        }
-
-        var uniqueCourse = new Set();           //only allow user to add unique item
-        function selectOption(target)
-        {
-            //console.log(target.value);
-            if(target.checked==true)
-                uniqueCourse.add(target.value);
-            else
-                uniqueCourse.delete(target.value);
-
-            console.log(uniqueCourse);
-
-            document.getElementById("ch-ans").innerHTML = Array.from(uniqueCourse);
-
-
-        }
-    </script>
+    <script src="./js/script1.js"></script>
+    <script src="https://kit.fontawesome.com/6ca4e8a325.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
